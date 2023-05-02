@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-// Helper method for generating unique ids
+
 const routes = require('./routes')
 
 const PORT = 3001;

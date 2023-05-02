@@ -3,6 +3,7 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+// let deleteNoteBtn;
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -71,6 +72,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+  console.log(newNote)
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -88,7 +90,6 @@ const handleNoteDelete = (e) => {
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -122,6 +123,7 @@ const renderNoteList = async (notes) => {
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
+
 
   let noteListItems = [];
 
